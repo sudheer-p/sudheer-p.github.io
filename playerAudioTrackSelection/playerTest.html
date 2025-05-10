@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+<div style="max-width: 960px;">
+  <style>
+  video-js.video-js.vjs-fluid:not(.vjs-audio-only-mode) {
+    padding-top: 56.25%;
+  }
+  </style>
+
+    <!-- user any of the below players for testing -->
+    <!-- Media - 1 Player and Media with 3 audio tracks - en, es, es-MX -->
+
+  <div style="width: 960px;">
+     <video-js
+        id="myPlayerID"
+        data-account="1752604059001"
+        data-player="BJAZNkRV"
+        data-embed="default"
+        controls=""
+        data-video-id="6033855353001"
+        data-playlist-id=""
+        data-application-id=""
+        width="960" height="540"
+        class="vjs-fluid">
+    </video-js>
+  </div>
+
+<script src="https://players.brightcove.net/1752604059001/BJAZNkRV_default/index.min.js"></script>
+
+
+<!-- Media - 2 Player and Media with 3 audio tracks - en, de, it but all audio tracks seems to have same content
+-->
+
+<!--
+  <video-js
+    id="myPlayerID"
+    data-account="6252627204001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="1823139158156110655"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"
+    class="vjs-fluid"></video-js>
+</div>
+<script
+  src="https://players.brightcove.net/6252627204001/default_default/index.min.js">
+</script>
+-->
+
+<!-- Media - 3 Player and Media with a SINGLE audio tracks - en
+-->
+<!--
+<div style="width: 960px;">
+  <video-js
+    id="myPlayerID"
+    data-account="6259854281001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="6368224475112"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"
+    class="vjs-fluid"></video-js>
+</div>
+<script
+  src="https://players.brightcove.net/6259854281001/default_default/index.min.js">
+</script>
+-->
+
+
+<script src="audioTrackSelection.js"></script>
+
+<script>
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+    myPlayer.autoAudioTrackSelection();
+  });
+</script>
+
+</body>
+
+</html>
