@@ -13,6 +13,8 @@
 videojs.registerPlugin('autoAudioTrackSelection', function()
 {
     var myPlayer = this;
+    console.log("Registering plugin");
+    
     myPlayer.on('loadedmetadata',function()
     {
         var trackLanguage, audioTracks;
