@@ -10,11 +10,10 @@
                 following ISO 639-1
  */
 
-videojs.registerPlugin('autoAudioTrackSelection', function()
+videojs.registerPlugin('langLabelChange', function()
 {
     var myPlayer = this;
-    console.log("Registering plugin");
-    
+
     myPlayer.on('loadedmetadata',function()
     {
         var trackLanguage, audioTracks;
@@ -26,13 +25,12 @@ videojs.registerPlugin('autoAudioTrackSelection', function()
         for (var i = 0; i < (audioTracks.length); i++)
         {
             trackLanguage = audioTracks[i].language;
-            console.log('*The audio track lang code: %s', trackLanguage);
             newLabel = iso639_1_List[(trackLanguage.toLowerCase())];
+
             console.log("Current Lang Label %s is going to change to %s",
               audioTracks[i].label, newLabel);
             if (typeof newLabel == "string" && newLabel.length != 0)
             {
-              console.log("Changing the label to %s", newLabel);
               audioTracks[i].label = newLabel;
             }
         }
